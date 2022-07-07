@@ -28,9 +28,5 @@ console.log(await contenedor.save(
     }
 )
 );
-//funciones
-    //console.log(await contenedor.getById(3));
-    //console.log(await contenedor.getAll());
-    //console.log(await contenedor.deleteById(3));
-    //console.log(await contenedor.deleteAll());
+
 })();
