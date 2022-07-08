@@ -1,58 +1,12 @@
 const { json } = require('express');
-const Contenedor = require('./Contenedor');
-const products = new Contenedor('./productos.txt');
-
-const app = require('express')();
+const router_server = require("./router_server.js");
+const app = express();
 const PORT = process.env.PORT || 8080;
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.static("public"));
 
-app.get('/api/productos', async (req, res) => {
-    try {
-       res.status(200).send(await products.getAll());
-    } catch (error) {
-        console.error(error);
-    }
-});
-
-app.get('/api/productos/:id', async (req, res) => {
-    try {
-        let numero= Number(req.params.id)
-            res.json(await products.getById(numero));
-        
-    } catch (error) {
-        console.error("Producto no encontrado");
-    }
-});
-
-app.post('/api/productos', async (req, res) => {
-    try {
-        console.log("POST recibido")
-        
-        products.push(req.body)
-        
-        res.json("Se agrega nuevo mensaje")   
-    } catch (error) {
-        console.error("Producto no encontrado");
-    }
-});
-
-
-app.put('/api/productos/:id', async (req, res) => {
-    try {
-        console.log("PUT recibido")
-        res.json("Actualizar nuevo mensaje")   
-    } catch (error) {
-        console.error("Producto no encontrado");
-    }
-});
-
-app.delete('/api/productos/:id', async (req, res) => {
-    try {
-        console.log("Delete recibido")
-        res.json("Borrando mensaje")    
-    } catch (error) {
-        console.error("Producto no encontrado");
-    }
-});
+app.use("/api/productos", router_server);
 
 const server = app.listen(PORT, () => {
     console.log(`Server started on port: ${PORT}`);
