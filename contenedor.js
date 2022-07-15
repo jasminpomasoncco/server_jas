@@ -44,7 +44,7 @@ class Contenedor {
       let content = await this.readFile();
       this.writeFile(content.filter((product) => producto.id !== id));
     } catch (e) {
-      console.error("ERROR!");
+      console.error("ERROR");
     }
   }
 

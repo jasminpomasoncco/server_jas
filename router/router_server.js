@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const productos = require('../products');
+const productos = require('../products.js');
 
 const router_server= Router()
 

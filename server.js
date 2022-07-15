@@ -9,8 +9,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use( express.static(__dirname + '/public'))
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/public/index')
+    res.sendFile(__dirname + './public/index.html')
 })
+
 app.use('/api/products', router_server);
 
 const server = app.listen(PORT, () => {
