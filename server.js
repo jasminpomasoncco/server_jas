@@ -13,7 +13,7 @@ app.use( express.static(__dirname + '/public'))
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/index')
 })
-app.use('/api/products', router_server.router_server);
+app.use('/api/products', router_server);
 
 const server = app.listen(PORT, () => {
     console.log("Servidor levantado en puerto " + server.address().port);
