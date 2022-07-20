@@ -7,10 +7,13 @@
     <title>FORMULARIO</title>
 </head>
 <body>
-    <form action="/api/products/" method="post">
+
+    <form action="/api/products/" method="get">
         <input type="submit" value="Get All Products">
     </form>
+
     <br>
+
     <form method="get" id="getProductById">
         <input type="number" name="id" id="id" oninput = "return getProductById(); false;">
         <input type="submit" value="Get Product by id">
@@ -30,6 +33,7 @@
         <input type="submit" value="Create">
     </form>
 
+    
 
     <script>
         function getProductById() {
@@ -37,6 +41,7 @@
             let form = document.getElementById('getProductById');
             form.setAttribute('action', '/api/products/' + id);
         }
+
     </script>
 </body>
 </html>

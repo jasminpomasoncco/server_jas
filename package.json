@@ -12,5 +12,14 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.1"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jasminpomasoncco/motores_de_plantilla.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jasminpomasoncco/motores_de_plantilla/issues"
+  },
+  "homepage": "https://github.com/jasminpomasoncco/motores_de_plantilla#readme"
 }
